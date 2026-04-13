@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criz Marie Entera | Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<div id="imgModal" class="modal" onclick="closeModal()">
+  <img id="modalImg">
+</div>
+<script>
+function openModal(img){
+  document.getElementById("imgModal").style.display = "flex";
+  document.getElementById("modalImg").src = img.src;
+}
+
+function closeModal(){
+  document.getElementById("imgModal").style.display = "none";
+}
+</script>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <h2>MY PORTFOLIO</h2>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <script>
+  // Select all navbar links
+  const navLinks = document.querySelectorAll('nav ul li a');
+
+  // Add click event to each link
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      // Remove active class from all links
+      navLinks.forEach(nav => nav.classList.remove('active'));
+      // Add active class to clicked link
+      this.classList.add('active');
+    });
+  });
+
+  // Optional: make link active on scroll
+  const sections = document.querySelectorAll('section');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 60; // adjust for navbar height
+      if(pageYOffset >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if(link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
+  <!-- HOME -->
+  <section id="home" class="home">
+    <h1>HELLO, I'M CRIZ MARIE ENTERA</h1>
+    <p>WELCOME TO MY PORTFOLIO</p>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h1>About Me</h1>
+    <div class="card">
+      <p>Hi! My name is <strong>Criz Marie S. Entera</strong>, a Bachelor of Science in Computer Science student from Tangub City Global College.</p>
+      <p>I am a motivated and hardworking individual who is eager to learn and grow. I am passionate about improving my skills and achieving my goals. I always strive to do my best in everything I do and remain dedicated to continuous self-improvement.</p>
+      <p>I enjoy exploring new ideas, learning new things, and developing my abilities. I believe that with determination, patience, and a positive mindset, I can achieve success in my chosen field.</p>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <h1>Education</h1>
+    <div class="card">
+      <h3>PRIMARY </h3>
+      <p>Bayabas Elementary School <br> Address: Bayabas, Aurora, Zamboanga Del Sur <br> Year: 2015-2016</p>
+
+      <h3>SECONDARY</h3>
+      <p>Aurora National High School <br> Address: Balide, Aurora, Zamboanga Del Sur <br> Year: 2021-2022</p>
+
+      <h3>TERTIARY</h3>
+      <p>Tangub City Global College <br> Address: Maloro, Tangub City <br> Year: 2022-Present</p>
+    </div>
+  </section>
+
+</section>
+  <!-- PROJECTS -->
+  <section id="projects">
+  <h1>Projects</h1>
+
+  <div class="projects-wrapper">
+
+    <div class="project-box">
+  <img src="images/pro1.jpg" onclick="openModal(this)">
+</div>
+    <div class="project-box">
+      <img src="images/pro2.jfif" onclick="openModal(this)">
+    </div>
+
+    <div class="project-box">
+      <img src="images/pro3.jfif" onclick="openModal(this)">
+    </div>
+
+    <div class="project-box">
+      <img src="images/pro4.jfif" onclick="openModal(this)">
+    </div>
+
+    <div class="project-box">
+      <img src="images/pro5.jfif" onclick="openModal(this)">
+    </div>
+
+    <div class="project-box">
+      <img src="images/pro6.jfif" onclick="openModal(this)">
+    </div>
+
+ 
+  </div>
+</section>
+  
+  <!-- RESUME -->
+  <section id="resume" class="resume">
+  <h1>Resume</h1>
+
+  <div class="resume-container">
+
+    <!-- LEFT -->
+   
+    <div class="resume-left">
+      <div class="resume-profile">
+        <img src="images/pro7.jfif" onclick="openModal(this)">
+      </div>
+      
+      
+      <h2>Criz Marie S. Entera</h2>
+      
+
+      <div class="resume-box">
+        <h3>Contact</h3>
+        <p>📧 enteracrizmarie@gmail.com</p>
+        <p>📱 0912-234-5678</p>
+        <p>📍 Tangub City</p>
+      </div>
+
+      <div class="resume-box">
+        <h3>Education</h3>
+        <ul>
+          <li>Bayabas Elementary School (2015–2016)</li>
+          <li>Aurora National High School (2021–2022)</li>
+          <li>Tangub City Global College (2022–Present)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CENTER LINE -->
+    <div class="resume-divider"></div>
+
+    <!-- RIGHT -->
+    <div class="resume-right">
+
+      <div class="resume-box">
+        <h3>Certificates</h3>
+        <ul>
+          <li>Best Research System</li>
+          <li>The Rise of Artificial Intelligence: A Disruptive Inovation</li>
+          <li>Regional Startup Enablers for Ecosystem Development</li>
+          <li>Reverse Pitching: Local Challenges, Digital Solutions</li>
+        </ul>
+      </div>
+
+      <div class="resume-box">
+        <h3>Skills</h3>
+        <ul>
+          <li>Photography</li>
+          <li>UI/UX </li>
+          <li>Document Handling</li>
+          <li>Dancing (Cheerdance)</li>
+        </ul>
+      </div>
+
+      <div class="resume-box">
+        <h3>Experience</h3>
+        <ul>
+          <li>Summer Job</li>
+          <li>During my internship, I assisted with document processing and organized office files. i also helped ensure documents were complete and properly signed. This experience improved my communication, organization, and teamwork</li>
+        </ul>
+      </div>
+
+      <div class="resume-box">
+        <h3>Career Goal</h3>
+        <p>
+          To become successful someday and suport my family in their needs.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+  </div>
+</section>
+
+ <section id="contact">
+  <h1>Contact Me</h1>
+
+  <div class="card">
+    <h3>Phone</h3>
+    <p>0912-234-5678</p>
+
+    <h3>Email</h3>
+    <p>enteracrizmarie@gmail.com</p>
+
+    <h3>Facebook</h3>
+    <p><a href="https://www.facebook.com/marie.entera.5">facebook.com/profile</a></p>
+  </div>
+</section>
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Criz Marie Entera</p>
+  </footer>
+
+</body>
+</html>
